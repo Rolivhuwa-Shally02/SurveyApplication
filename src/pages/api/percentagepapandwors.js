@@ -18,7 +18,7 @@ const pool = new Pool({
 export default async function handler(req, res) {
   let db_result;
   if (req.method === "GET") {
-    const youngestQuery = `SELECT (COUNT(*) FILTER (WHERE "favoritefood" LIKE '%papandWors%') * 100.0 / COUNT(*)) AS percentage FROM  public.entries;`;
+    const youngestQuery = `SELECT ROUND((COUNT(*) FILTER (WHERE "favoritefood" LIKE '%papandWors%') * 100.0 / COUNT(*)), 1) AS percentage FROM  public.entries;`;
 
     await pool.query(youngestQuery, (error, result) => {
       if (error) {
