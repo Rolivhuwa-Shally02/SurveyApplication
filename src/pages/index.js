@@ -13,15 +13,15 @@ import "bootstrap/dist/css/bootstrap.min.css";
 const convertRatingtoInteger = (rating) => {
   switch (rating) {
     case "stronglyAgree":
-      return 5;
+      return 1;
     case "agree":
-      return 4;
+      return 2;
     case "neutral":
       return 3;
     case "disagree":
-      return 2;
+      return 4;
     case "stronglyDisagree":
-      return 1;
+      return 5;
     // Add more case clauses as needed
     default:
     // statements to be executed if no case matches
