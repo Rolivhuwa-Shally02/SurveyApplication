@@ -18,7 +18,7 @@ const pool = new Pool({
 export default async function handler(req, res) {
   let db_result;
   if (req.method === "GET") {
-    const oldestQuery = `SELECT AVG("watchmovies") AS "average" FROM public.entries;`;
+    const oldestQuery = `SELECT ROUND(AVG("watchmovies"), 1) AS "average" FROM public.entries;`;
 
     await pool.query(oldestQuery, (error, result) => {
       if (error) {

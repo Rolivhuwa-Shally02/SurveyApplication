@@ -17,7 +17,7 @@ const pool = new Pool({
 
 export default function handler(req, res) {
   if (req.method === "POST") {
-    const insertQuery = `INSERT INTO entries (fullname, email, dateofbirth,contactnumber,favoritefood,watchmovies,listenradio,eatout,watchtv) VALUES ($1, $2, $3, $4, $5,$6, $7,$8,$9)`;
+    const insertQuery = `INSERT INTO entries (fullname, email, dateofbirth, contactnumber,favoritefood,watchmovies,listenradio,eatout,watchtv) VALUES ($1, $2, $3, $4, $5,$6, $7,$8,$9)`;
     const values = [
       req.body.fullname,
       req.body.email,
